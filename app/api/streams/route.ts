@@ -16,7 +16,7 @@ const CreateStreamSchema = z.object({
 export async function POST(req:NextRequest) {
     try{
         const data =  CreateStreamSchema.parse(await req.json());
-        const isYt = data.url.match(YT_REGEX)
+        const isYt = data.url.match(YT_REGEX);
         if(!isYt){
             return NextResponse.json(
               {
@@ -28,7 +28,8 @@ export async function POST(req:NextRequest) {
             );
         }
 
-        const extractedId = data.url.split("?v=")[1]; 
+        const extractedId = data.url.split("?v=")[1];
+        console.log(extractedId) 
 
         const res = await youtubesearchapi.GetVideoDetails(extractedId)
         // console.log("this is title",res.title);
