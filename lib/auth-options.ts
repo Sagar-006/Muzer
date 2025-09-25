@@ -57,7 +57,7 @@ export const authOptions = {
             const newUser = await prisma.user.create({
               data: {
                 email: emailValidation.data,
-                passwor: hashedPassword,
+                password: hashedPassword,
                 Provider: "Credentials",
               },
             });
