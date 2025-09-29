@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({
             message:"Youtube link cannot be empty",
         },
-        {
+        {c
             status:400,
         }
     )
